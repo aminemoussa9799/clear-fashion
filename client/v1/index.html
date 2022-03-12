@@ -6,11 +6,47 @@
   </head>
   <body>
     <div>
+      <p>Celui est un test</p>
       <p>Focus only on coding, forgot the browser display (next workshop!).</p>
       <p>Check the ouput in your browser console (Use <code>Ctrl + Shift + J</code> or <code>Cmd + Opt + J</code> to focus to your console devtools)
       <p>Use <code>console.log</code> or <code>console.table</code> to display results (for the moment)</p>
     </div>
-    <script type="text/javascript" charset="UTF-8" src="data.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="data.js">
+    </script>
     <script type="text/javascript" charset="UTF-8" src="index.js"></script>
   </body>
 </html>
+
+<script type="text/javascript" id="Exo1">
+  const NumProducts=marketplace.length
+  console.log("Number of brands : " + NumProducts);
+</script>
+
+<script type="text/javascript" id="Exo2">
+  const NameProducts = [];
+  for(var i in marketplace){
+    if(!NameProducts.includes(marketplace[i].brand)){
+      NameProducts.push(marketplace[i].brand);
+    }
+  }
+  console.log("Name of brands : " + NameProducts);
+</script>
+
+<script type="text/javascript" id="Exo3">
+
+  function sort_products_on_price(products, lowest_first)
+  {
+    const sorted_products = Array.from(products);
+    if(lowest_first){
+      sorted_products.sort((a, b) => (a.price > b.price) ? 1 : -1);
+    }
+    else{
+      sorted_products.sort((a, b) => (a.price < b.price) ? 1 : -1);
+    }
+    return sorted_products;
+  }
+  const sorted_products_price = sort_products_on_price(marketplace, true);
+  console.log("Sorted products on price :");
+  console.log(sorted_products_price);
+
+</script>
